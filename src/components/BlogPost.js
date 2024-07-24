@@ -4,11 +4,15 @@ export const convertToSlug = (title) => {
   return title
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/[^\w-]+/g, ''); // Remove all non-word characters except hyphens
+    .replace(/\s+/g, '-') 
+    .replace(/[^\w-]+/g, '');
 };
+
+
 const BlogPost = ({ blogPost }) => {
   const slug = convertToSlug(blogPost.title)
+
+  
   return (
     <div className='p-4 m-4 shadow-lg flex justify-center flex-col w-3/4 mx-auto' >
       <div>

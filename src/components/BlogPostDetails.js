@@ -1,16 +1,10 @@
-import React from 'react'
-import { useMatch } from 'react-router-dom';
-import { convertToSlug } from './BlogPost';
-import { Link } from 'react-router-dom';
-const BlogPostDetails = ({ blogPosts }) => {
-  const match = useMatch('/blog/:slug');
-  const slug = match.params.slug
 
-  const blogPost = match ? blogPosts.find(blog => convertToSlug(blog.title) === slug) : null
-  console.log('the slug from url', blogPost)
+import { Link } from 'react-router-dom';
+const BlogPostDetails = ({blogPost }) => {
+
 
   if (!blogPost) {
-    return <>no blogs</>
+    return <>no such blog</>
 
   }
   return (
